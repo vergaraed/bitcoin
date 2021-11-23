@@ -8,6 +8,11 @@ https://bitcoincore.org/en/download/.
 
 Further information about Bitcoin Core is available in the [doc folder](/doc).
 
+## BlockchainBPI
+
+Wouldn't it be nice to use rpc calls vs curl?  Add rpc interface to more tightly couple with cryptreserve server with the ability 
+to remain loosely coupled networking-wise.
+
 What is Bitcoin?
 ----------------
 
