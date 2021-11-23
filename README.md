@@ -10,8 +10,8 @@ Further information about Bitcoin Core is available in the [doc folder](/doc).
 
 ## BlockchainBPI
 
-Wouldn't it be nice to use rpc calls vs curl?  Add rpc interface to more tightly couple with cryptreserve server with the ability 
-to remain loosely coupled networking-wise.  No more polling for confirmations or unspent outputs.  Who needs a database when one has IPFS and a BTC node. If a client runs these using their private keys, using checksums they can automate transactions or flows as is done with corda, the oracle.
+Add rpc interface to more tightly couple with cryptreserve server with the ability 
+to remain loosely coupled networking-wise.  Eliminates curl polling for confirmations or unspent outputs.  Tapping IPFS and a BTC node and perhaps using lightning as a payment gateway can securley and reliably store an intelligent state machine and a revisional and permissionable data system.
 
 What is Bitcoin?
 ----------------
