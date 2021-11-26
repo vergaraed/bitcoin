@@ -10,8 +10,45 @@ Further information about Bitcoin Core is available in the [doc folder](/doc).
 
 ## BlockchainBPI
 
-Add rpc interface to more tightly couple with cryptreserve server with the ability 
-to remain loosely coupled networking-wise.  Eliminates curl polling for confirmations or unspent outputs.  Tapping IPFS and a BTC node and perhaps using lightning as a payment gateway can securley and reliably store an intelligent state machine and a revisional and permissionable data system.
+Tapping IPFS and a BTC node and perhaps using lightning as a payment gateway can securley and reliably store an intelligent state machine and a revisional and permissionable data system.
+
+Add rpc interface to more tightly couple with cryptreserve server with the ability to remain loosely coupled networking-wise.
+Eliminates curl polling for confirmations or unspent outputs.  
+
+JSON de/serialization as with any generic data model translation is the bottle neck on any trading system.  Tight binding with structs is fast, period.  And using rpcgen solves the platform endianess issue and optimaizations as per struct aligning etc.
+
+
+
+
+RPC updates:
+
+- bitcoind::main -> AppInit -> AppInitMain (interfaces::MakeNodeInit ((Context*)&node)) 
+- init::AppInitMain(node) { RegisterForSignals(node-sdheduler (thread)) } -> init::AppInitServers -> rpc/server.cpp::StartRPC
+- server::StartRPC
+
+Interfaces owns the rcp execute hook.
+
+
+Build:
+```
+brew install automake libtool boost pkg-config libevent
+
+brew install qt@5
+
+// Sorta important, learned this the hard way.
+brew uninstall qt
+
+//This might be insteresting.  Modify this to work with finger prints instead-of/or-in-addition-to qr codes.
+brew install qrencode
+
+//Download and build bitcoin using sqlite and the GUI.
+git clone git@github.com:vergaraed/bitcoin.git
+cd bitcoin
+autconf
+./configure --without-bdb --with-gui=yes
+make
+make test
+```
 
 What is Bitcoin?
 ----------------
