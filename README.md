@@ -17,7 +17,7 @@ Eliminates curl polling for confirmations or unspent outputs.
 
 JSON de/serialization as with any generic data model translation is the bottle neck on any trading system.  Tight binding with structs is fast, period.  And using rpcgen solves the platform endianess issue and optimaizations as per struct aligning etc.
 
-
+Nice to have: shared memory, plug-in system (with auto-build and restart) for generating new custom rpc api's via a CR form builder with drop-down field types and storing in a CID.
 
 
 RPC updates:
