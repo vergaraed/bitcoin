@@ -1178,6 +1178,10 @@ bool AppInitMain(NodeContext& node, interfaces::BlockAndHeaderTipInfo* tip_info)
     RegisterAllCoreRPCCommands(tableRPC);
     for (const auto& client : node.chain_clients) {
         client->registerRpcs();
+
+    //Start Custom RPC Plug-ins
+    //StartCustomRPCPluginSvc();
+
     }
 #if ENABLE_ZMQ
     RegisterZMQRPCCommands(tableRPC);

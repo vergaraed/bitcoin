@@ -2,7 +2,7 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#include <rpc/server.h>
+#include <customrpc/server.h>
 
 #include <banman.h>
 #include <chainparams.h>
@@ -15,9 +15,9 @@
 #include <netbase.h>
 #include <node/context.h>
 #include <policy/settings.h>
-#include <rpc/blockchain.h>
-#include <rpc/protocol.h>
-#include <rpc/util.h>
+#include <customrpc/blockchain.h>
+#include <customrpc/protocol.h>
+#include <customrpc/util.h>
 #include <sync.h>
 #include <timedata.h>
 #include <util/strencodings.h>
